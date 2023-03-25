@@ -1,35 +1,32 @@
 #include "main.h"
 
 /**
- * print_number - printing numbers with putchar
- * @n: number to print
- * Return: no return.
+ * print_number - function to print integers
+ * @integ: list printed
+ * Return: Return count
  */
-int print_number(int n)
+int print_number(va_list integ)
 {
-	unsigned int a, b, c, d, f;
-	int count = 0;
+	int a, expo = 1, len = 0;
+	unsigned int n;
 
-	if (n < 0)
+	a = va_arg(integ, int);
+
+	if (a < 0)
 	{
-		_putchar('-');
-		n = n * -1;
-		count++;
+		len = len + _putchar('-');
+		n = a * -1;
 	}
-	b = n;
-	c = 1;
-	for (a = 1 ; b > 9 ; a++)
+	else
+		n = a;
+	while (n / expo > 9)
+		expo *= 10;
+
+	while (expo != 0)
 	{
-		b = b / 10;
-		c = c * 10;
+		len = len + _putchar(n / expo + '0');
+		n = n % expo;
+		expo = expo / 10;
 	}
-	for (f = 1; f <= a; f++)
-	{
-		d = n / c;
-		n = n % c;
-		c = c / 10;
-		_putchar(d + '0');
-		count++;
-	}
-	return (count);
+	return (len);
 }
