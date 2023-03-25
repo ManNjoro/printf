@@ -19,6 +19,12 @@ int printf_unsigned(unsigned int num, int count_of_printed);
 int printf_reverse(va_list args, int count_of_printed);
 int printf_pointer(va_list args, int count_of_printed);
 
+/**
+ * struct printf_f - a struct for the printf string specifiers ans
+ * their corresponding functions.
+ * @specifier: a character specifier.
+ * @f: a function for the specifier.
+ */
 typedef struct printf_f
 {
 	char specifier;

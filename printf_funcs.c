@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * printf_char - prints a single character.
- * @va_list: an argument of type_valist.
+ * @args: an argument of type_valist.
  * @count_of_printed: the length of characters to print.
  * Return: number of charaters printed.
  */
@@ -9,12 +9,12 @@ int printf_char(va_list args, int count_of_printed)
 {
 	int c = va_arg(args, int);
 
-	return write(1, &c, count_of_printed);
+	return (write(1, &c, count_of_printed));
 }
 
 /**
  * printf_string - prints a string..
- * @va_list: an argument of type_valist.
+ * @args: an argument of type_valist.
  * @count_of_printed: the number of characters to print.
  * Return: number of charaters printed.
  */

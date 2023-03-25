@@ -11,12 +11,12 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	printf_fmt fmts[] = {
-		{'c' , printf_char},
-		{'s' , printf_string},
+		{'c', printf_char},
+		{'s', printf_string},
 		{'\0', NULL},
 	};
 
-	if(!format)
+	if (!format)
 		return (0);
 
 	va_start(args, format);
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			count = _putchar(format[i]); 
+			count = _putchar(format[i]);
 			len += count;
 			continue;
 		}
