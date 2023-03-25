@@ -13,6 +13,7 @@ int printf_integer(va_list args, int count_of_printed);
 int select_specifier(const char *format, va_list args, int count_of_printed);
 int printf_binary(unsigned int num, int count_of_printed);
 int _printf(const char *format, ...);
+int print_number(int n);
 int printf_hex(unsigned int num, int count_of_printed, int uppercase);
 int printf_octal(unsigned int num, int count_of_printed);
 int printf_unsigned(unsigned int num, int count_of_printed);
