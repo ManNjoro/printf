@@ -20,7 +20,7 @@ int printf_oct(va_list args);
 int printf_unsigned_int(va_list args);
 int printf_hex(va_list args);
 int printf_HEX(va_list args);
-int printf_reverse(va_list arg);
+int printf_rev_str(va_list arg);
 int printf_pointer(va_list args);
 
 /**
