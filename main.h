@@ -9,7 +9,6 @@
 int _putchar(char c);
 int printf_char(va_list args, int count_of_printed);
 int printf_string(va_list args, int count_of_printed);
-int printf_integer(va_list args, int count_of_printed);
 int select_specifier(const char *format, va_list args, int count_of_printed);
 int printf_binary(unsigned int num, int count_of_printed);
 int _printf(const char *format, ...);
