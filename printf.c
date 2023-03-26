@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	printf_fmt fmts[] = {
 		{'c', printf_char},
 		{'s', printf_string},
+		{'i', printf_integer},
+		{'d', printf_decimal},
 		{'\0', NULL},
 	};
 
