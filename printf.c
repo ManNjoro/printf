@@ -19,8 +19,9 @@ int _printf(const char *format, ...)
 		{'\0', NULL},
 	};
 
-	if (!format || !format[0])
+	if (format == NULL || format[0] == '\0')
 		return (-1);
+
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -30,7 +31,7 @@ int _printf(const char *format, ...)
 			len += count;
 			continue;
 		}
-		if (!format[i + 1] || format[i + 1] == ' ')
+		if (format[i + 1] == '\0' || format[i + 1] == ' ')
 			return (-1);
 		for (j = 0; fmts[j].specifier; j++)
 		{
