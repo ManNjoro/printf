@@ -5,8 +5,9 @@
  * @list: list of arguments
  * Return: Will return the amount of characters printed.
  */
-int printf_percent(__attribute__((unused))va_list list)
+int printf_percent(va_list list)
 {
+	(void)list;
 	_putchar('%');
 	return (1);
 }
