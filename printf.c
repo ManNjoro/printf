@@ -19,10 +19,8 @@ int _printf(const char *format, ...)
 		{'R', printf_rot13}, {'S', printf_exclusive_string},
 		{'\0', NULL},
 	};
-
 	if (format == NULL || format[0] == '\0')
 		return (-1);
-
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{

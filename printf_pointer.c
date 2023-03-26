@@ -56,7 +56,7 @@ int printf_pointer(va_list args)
 
 	if (arg == NULL)
 	{
-		for ( ;_null_arg[len] != '\0'; len++)
+		for ( ; _null_arg[len] != '\0'; len++)
 			_putchar(_null_arg[len]);
 		return (len);
 	}

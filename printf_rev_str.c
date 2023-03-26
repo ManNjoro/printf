@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * print_rev_str - prints a string in reverse.
- * args: a va_list type argument.
+ * printf_rev_str - prints a string in reverse.
+ * @args: a va_list type argument.
  * Return: number of characters printed.
  */
 int printf_rev_str(va_list args)
