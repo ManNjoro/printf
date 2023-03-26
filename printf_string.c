@@ -9,8 +9,8 @@ int printf_string(va_list args)
 	char *str = va_arg(args, char *);
 	int len = 0;
 
-	if (srt == NULL || str[0] == '\0')
-		str = "(null)";
+	if (str == NULL || *str == '\0')
+		return (0);
 
 	while (str != NULL && str[len] != '\0')
 	{
