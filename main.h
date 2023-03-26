@@ -23,6 +23,8 @@ int printf_HEX(va_list args);
 int printf_rev_str(va_list arg);
 int printf_pointer(va_list args);
 int printf_rot13(va_list args);
+int printf_HEX_aux(unsigned int num);
+int printf_exclusive_string(va_list val);
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans

@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		{'o', printf_oct}, {'u', printf_unsigned_int},
 		{'x', printf_hex}, {'X', printf_HEX},
 		{'p', printf_pointer}, {'r', printf_rev_str},
-		{'R', printf_rot13},
+		{'R', printf_rot13}, {'S', printf_exclusive_string},
 		{'\0', NULL},
 	};
 
