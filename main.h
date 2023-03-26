@@ -7,20 +7,19 @@
 #include <stdlib.h>
 
 int _putchar(char c);
-int printf_char(va_list args, int count_of_printed);
-int printf_string(va_list args, int count_of_printed);
 int select_specifier(const char *format, va_list args, int count_of_printed);
-int printf_binary(unsigned int num, int count_of_printed);
 int _printf(const char *format, ...);
+int printf_char(va_list args);
+int printf_string(va_list args);
+int printf_binary(va_list args);
 int printf_integer(va_list args);
 int printf_decimal(va_list args);
 int print_unsigned(va_list args);
-int printf_percent(va_list);
-int printf_hex(unsigned int num, int count_of_printed, int uppercase);
-int printf_octal(unsigned int num, int count_of_printed);
-int printf_unsigned(unsigned int num, int count_of_printed);
-int printf_reverse(va_list args, int count_of_printed);
-int printf_pointer(va_list args, int count_of_printed);
+int printf_percent(va_list args);
+int printf_octal(va_list args);
+int printf_unsigned(va_list args);
+int printf_reverse(va_list arg);
+int printf_pointer(va_list args);
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans
@@ -31,7 +30,7 @@ int printf_pointer(va_list args, int count_of_printed);
 typedef struct printf_f
 {
 	char specifier;
-	int (*f)(va_list args, int count_of_printed);
+	int (*f)(va_list args);
 } printf_fmt;
 
 #endif

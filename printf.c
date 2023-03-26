@@ -9,7 +9,6 @@ int _printf(const char *format, ...)
 {
 	int i, j, len = 0, count;
 	va_list args;
-
 	printf_fmt fmts[] = {
 		{'c', printf_char},
 		{'s', printf_string},
@@ -17,9 +16,8 @@ int _printf(const char *format, ...)
 		{'\0', NULL},
 	};
 
-	if (!format)
-		return (0);
-
+	if (!format || !format[0])
+		return (-1);
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -29,12 +27,15 @@ int _printf(const char *format, ...)
 			len += count;
 			continue;
 		}
-
+		if (!format[i + 1] || format[i + 1] == ' ')
+			return (-1);
 		for (j = 0; fmts[j].specifier; j++)
 		{
 			if (fmts[j].specifier == format[i + 1])
 			{
-				count = fmts[j].f(args, 1);
+				count = fmts[j].f(args);
+				if (count == -1)
+					return (-1);
 				len += count;
 				i++;
 			}
