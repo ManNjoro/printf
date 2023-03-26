@@ -11,10 +11,7 @@ int printf_string(va_list args)
 	int len = 0;
 
 	if (str == NULL)
-		str = "(null)";
-
-	if (str[0] == '\0')
-		return (-1);
+		str = "(nil)";
 
 	while (str[len] != '\0')
 	{
