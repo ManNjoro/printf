@@ -9,7 +9,7 @@ int printf_string(va_list args)
 	char *str = va_arg(args, char *);
 	int len = 0;
 
-	if (!str)
+	if (srt == NULL || str[0] == '\0')
 		str = "(null)";
 
 	while (str && str[len] != '\0')
