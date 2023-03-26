@@ -9,7 +9,10 @@ int printf_string(va_list args)
 	char *str = va_arg(args, char *);
 	int i = 0, len = 0;
 
-	while (str[i] != '\0')
+	if (!str)
+		str = "(null)";
+
+	while (str && str[len] != '\0')
 	{
 		len += _putchar(str[i]);
 		i++;
