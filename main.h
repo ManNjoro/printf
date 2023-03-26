@@ -30,7 +30,7 @@ int printf_pointer(va_list args, int count_of_printed);
 typedef struct printf_f
 {
 	char specifier;
-	int (*f)(va_list args);
+	int (*f)(va_list args, int count_of_printed);
 } printf_fmt;
 
 #endif
