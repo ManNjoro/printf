@@ -7,15 +7,12 @@
 int printf_string(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int len = 0;
+	int len;
 
 	if (str == NULL)
 		str = "(null)";
 
-	while (str[len] != '\0')
-	{
-		len += _putchar(str[len]);
-	}
-
+	for (len = 0; str[len] != '\0'; len++)
+		_putchar(str[len]);
 	return (len);
 }
