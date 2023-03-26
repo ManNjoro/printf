@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int _putchar(char c);
 int select_specifier(const char *format, va_list args, int count_of_printed);
@@ -14,10 +15,11 @@ int printf_string(va_list args);
 int printf_binary(va_list args);
 int printf_integer(va_list args);
 int printf_decimal(va_list args);
-int print_unsigned(va_list args);
 int printf_percent(va_list args);
-int printf_octal(va_list args);
-int printf_unsigned(va_list args);
+int printf_oct(va_list args);
+int printf_unsigned_int(va_list args);
+int printf_hex(va_list args);
+int printf_HEX(va_list args);
 int printf_reverse(va_list arg);
 int printf_pointer(va_list args);
 

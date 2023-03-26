@@ -10,12 +10,11 @@ int _printf(const char *format, ...)
 	int i, j, len = 0, count;
 	va_list args;
 	printf_fmt fmts[] = {
-		{'c', printf_char},
-		{'s', printf_string},
-		{'%', printf_percent},
-		{'i', printf_integer},
-		{'d', printf_decimal},
-		{'b', printf_binary},
+		{'c', printf_char}, {'s', printf_string},
+		{'%', printf_percent}, {'i', printf_integer},
+		{'d', printf_decimal}, {'b', printf_binary},
+		{'o', printf_oct}, {'u', printf_unsigned_int},
+		{'x', printf_hex}, {'X', printf_HEX},
 		{'\0', NULL},
 	};
 
