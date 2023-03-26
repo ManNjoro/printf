@@ -50,8 +50,16 @@ int printf_pointer(va_list args)
 	int len = 0;
 	long int val;
 	char *arg;
+	char *_null_arg = "(nil)";
 
 	arg = va_arg(args, void*);
+
+	if (arg == NULL)
+	{
+		for ( ;_null_arg[len] != '\0'; len++)
+			_putchar(_null_arg[len]);
+		return (len);
+	}
 
 	_putchar('0');
 	_putchar('x');
