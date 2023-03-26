@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	printf_fmt fmts[] = {
 		{'c', printf_char},
 		{'s', printf_string},
+		{'%', printf_percent},
 		{'\0', NULL},
 	};
 

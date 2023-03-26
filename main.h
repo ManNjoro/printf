@@ -15,6 +15,7 @@ int _printf(const char *format, ...);
 int printf_integer(va_list args);
 int printf_decimal(va_list args);
 int print_unsigned(va_list args);
+int printf_percent(va_list);
 int printf_hex(unsigned int num, int count_of_printed, int uppercase);
 int printf_octal(unsigned int num, int count_of_printed);
 int printf_unsigned(unsigned int num, int count_of_printed);
