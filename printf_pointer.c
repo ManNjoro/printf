@@ -43,14 +43,19 @@ int unsigned_long_int_to_hex(unsigned long int num)
  * printf_pointer - prints the address of a pointer as
  * hexadecimal.
  * @args: an argument of type va_list.
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: number of characters printed.
  */
-int printf_pointer(va_list args)
+int printf_pointer(va_list args, char *buffer, int flags)
 {
 	int len = 0;
 	long int val;
 	char *arg;
 	char *_null_arg = "(nil)";
+
+	(void)buffer;
+	(void)flags;
 
 	arg = va_arg(args, void*);
 

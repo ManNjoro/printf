@@ -2,13 +2,18 @@
 /**
  * printf_integer - prints integer
  * @args: argument to print
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: number of characters printed
  */
-int printf_integer(va_list args)
+int printf_integer(va_list args, char *buffer, int flags)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
+
+	(void) buffer;
+	(void) flags;
 
 	n = n / 10;
 	num = n;
@@ -46,15 +51,19 @@ int printf_integer(va_list args)
 /**
  * printf_decimal - prints decimal
  * @args: argument to print
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: number of characters printed
  */
-
-int printf_decimal(va_list args)
+int printf_decimal(va_list args, char *buffer, int flags)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
 	int  i = 1;
 	int exp = 1;
+
+	(void) buffer;
+	(void) flags;
 
 	n = n / 10;
 	num = n;

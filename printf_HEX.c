@@ -4,13 +4,18 @@
  * printf_HEX - converts a decimal to an octal number
  * and prints it.
  * @args: an argument of type va_list.
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: number of digits in octal.
  */
-int printf_HEX(va_list args)
+int printf_HEX(va_list args, char *buffer, int flags)
 {
 	int i = 0, len = 0;
 	int *ptr;
 	unsigned int dec, tmp;
+
+	(void)buffer;
+	(void)flags;
 
 	dec = va_arg(args, unsigned int);
 	tmp = dec;

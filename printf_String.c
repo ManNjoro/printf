@@ -2,14 +2,19 @@
 /**
  * printf_exclusive_string - print exclusuives string.
  * @val: argumen t.
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: the length of the string.
  */
 
-int printf_exclusive_string(va_list val)
+int printf_exclusive_string(va_list val, char *buffer, int flags)
 {
 	char *s;
 	int i, len = 0;
 	int cast;
+
+	(void)buffer;
+	(void)flags;
 
 	s = va_arg(val, char *);
 	if (s == NULL)

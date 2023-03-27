@@ -10,13 +10,13 @@ int get_all_flags(const char *format, int *index)
 {
 	int i, j, flags = 0;
 	const char *FLAGS = "-+0# ";
-	const int _FLAGS[] = {F_NEG, F_POS, F_0, F_HASH, F_SPACE, 0};
+	const int _FLAGS[] = { F_NEG, F_POS, F_0, F_HASH, F_SPACE, 0 };
 
 	for (i = *index + 1; format[i]; i++)
 	{
 		for (j = 0; FLAGS[j]; j++)
 		{
-			if(format[i] == FLAGS[j])
+			if (format[i] == FLAGS[j])
 			{
 				flags |= _FLAGS[j];
 				break;

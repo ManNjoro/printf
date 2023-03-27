@@ -2,12 +2,17 @@
 
 /**
  * printf_percent - Prints a percent symbol
- * @list: list of arguments
+ * @args: list of arguments
+ * @buffer: a char buffer.
+ * @flags: format flags.
  * Return: Will return the amount of characters printed.
  */
-int printf_percent(va_list list)
+int printf_percent(va_list args, char *buffer, int flags)
 {
-	(void)list;
+	(void)args;
+	(void)buffer;
+	(void)flags;
+
 	_putchar('%');
 	return (1);
 }
