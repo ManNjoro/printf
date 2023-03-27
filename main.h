@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <limits.h>
 
+#define SIZE 1024
+
 int _putchar(char c);
 int select_specifier(const char *format, va_list args, int count_of_printed);
 int _printf(const char *format, ...);
@@ -25,6 +27,9 @@ int printf_pointer(va_list args);
 int printf_rot13(va_list args);
 int printf_HEX_aux(unsigned int num);
 int printf_exclusive_string(va_list val);
+
+int write_buffer(char *buf, int buf_size);
+
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans
