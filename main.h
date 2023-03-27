@@ -9,6 +9,12 @@
 
 #define SIZE 1024
 
+#define F_NEG 1
+#define F_POS 2
+#define F_0 4
+#define F_HASH 8
+#define F_SPACE 16
+
 int _putchar(char c);
 int select_specifier(const char *format, va_list args, int count_of_printed);
 int _printf(const char *format, ...);
@@ -30,6 +36,8 @@ int printf_exclusive_string(va_list val);
 
 int write_buffer(char *buf, int buf_size);
 int printf_helper(const char *format, va_list args);
+int get_all_flags(const char *format, int *inde);
+int printf_args(const char *format, int *index, va_list args);
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans
