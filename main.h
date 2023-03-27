@@ -29,7 +29,7 @@ int printf_HEX_aux(unsigned int num);
 int printf_exclusive_string(va_list val);
 
 int write_buffer(char *buf, int buf_size);
-
+int printf_helper(const char *format, va_list args);
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans
