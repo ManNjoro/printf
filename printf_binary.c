@@ -7,14 +7,18 @@
  * @flags: format flags.
  * Return: number of characters printed
  */
-int printf_binary(va_list args, char *buffer, int flags)
+int printf_binary(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int mask = 1;
 	int count = 0;
 
-	(void) buffer;
-	(void) flags;
+	(void)buffer;
+	(void)flags;
+	(void)size;
+	(void)precision;
+	(void)width;
 
 	while (mask <= num / 2)
 		mask *= 2;

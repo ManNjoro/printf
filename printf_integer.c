@@ -6,14 +6,18 @@
  * @flags: format flags.
  * Return: number of characters printed
  */
-int printf_integer(va_list args, char *buffer, int flags)
+int printf_integer(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
-	(void) buffer;
-	(void) flags;
+	(void)buffer;
+	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	n = n / 10;
 	num = n;
@@ -55,15 +59,19 @@ int printf_integer(va_list args, char *buffer, int flags)
  * @flags: format flags.
  * Return: number of characters printed
  */
-int printf_decimal(va_list args, char *buffer, int flags)
+int printf_decimal(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
 	int  i = 1;
 	int exp = 1;
 
-	(void) buffer;
-	(void) flags;
+	(void)buffer;
+	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	n = n / 10;
 	num = n;

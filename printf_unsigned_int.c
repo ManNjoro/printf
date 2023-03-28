@@ -6,19 +6,22 @@
  * @flags: format flags.
  * Return: numbers of characters printed.
  */
-int printf_unsigned_int(va_list args, char *buffer, int flags)
+int printf_unsigned_int(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	unsigned int _num;
 	int i, unit, num, digit, expo;
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 	_num = va_arg(args, unsigned int);
 	i = 1;
 	unit = _num % 10;
 	_num /= 10;
 	expo = 1;
-
 	if (unit < 0)
 	{
 		_putchar('-');
@@ -45,6 +48,5 @@ int printf_unsigned_int(va_list args, char *buffer, int flags)
 		}
 	}
 	_putchar(unit + '0');
-
 	return (i);
 }

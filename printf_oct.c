@@ -8,7 +8,8 @@
  * @flags: format flags.
  * Return: number of digits in octal.
  */
-int printf_oct(va_list args, char *buffer, int flags)
+int printf_oct(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	int i = 0, len = 0;
 	int *ptr;
@@ -19,6 +20,9 @@ int printf_oct(va_list args, char *buffer, int flags)
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	while (tmp / 8 != 0)
 	{

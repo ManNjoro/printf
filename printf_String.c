@@ -7,7 +7,8 @@
  * Return: the length of the string.
  */
 
-int printf_exclusive_string(va_list val, char *buffer, int flags)
+int printf_exclusive_string(va_list val, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	char *s;
 	int i, len = 0;
@@ -15,6 +16,9 @@ int printf_exclusive_string(va_list val, char *buffer, int flags)
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	s = va_arg(val, char *);
 	if (s == NULL)

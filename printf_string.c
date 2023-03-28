@@ -7,13 +7,17 @@
  * @flags: format flags.
  * Return: number of characters printed.
  */
-int printf_string(va_list args, char *buffer, int flags)
+int printf_string(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	char *str = va_arg(args, char *);
 	int len = 0;
 
-	(void) buffer;
-	(void) flags;
+	(void)buffer;
+	(void)flags; 
+	(void)width; 
+	(void)precision; 
+	(void)size;
 
 	if (str == NULL)
 		str = "(nil)";

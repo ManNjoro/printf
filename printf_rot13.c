@@ -7,7 +7,8 @@
  * Return: counter
  *
  */
-int printf_rot13(va_list args, char *buffer, int flags)
+int printf_rot13(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	int i, j, counter = 0;
 	int k = 0;
@@ -17,6 +18,9 @@ int printf_rot13(va_list args, char *buffer, int flags)
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	if (s == NULL)
 		s = "(null)";

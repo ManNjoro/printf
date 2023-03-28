@@ -47,7 +47,8 @@ int unsigned_long_int_to_hex(unsigned long int num)
  * @flags: format flags.
  * Return: number of characters printed.
  */
-int printf_pointer(va_list args, char *buffer, int flags)
+int printf_pointer(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	int len = 0;
 	long int val;
@@ -56,6 +57,9 @@ int printf_pointer(va_list args, char *buffer, int flags)
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	arg = va_arg(args, void*);
 

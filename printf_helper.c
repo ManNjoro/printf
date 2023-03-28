@@ -8,7 +8,7 @@
 int printf_helper(const char *format, va_list args)
 {
 	int i, printed = 0, count, buf_size = 0;
-	int flags;
+	int flags = 0, width = 0, precision = 0, size = 0;
 	char buf[SIZE];
 
 	for (i = 0; format[i]; i++)
@@ -25,9 +25,12 @@ int printf_helper(const char *format, va_list args)
 		if (format[i + 1] == '\0' || format[i + 1] == ' ')
 			return (-1);
 		flags = get_all_flags(format, &i);
+		width = get_width(format, &i, args);
+		precision = get_precision(format, &i, args);
+		size = get_size(format, &i);
 
 		i++;
-		count = printf_args(format, &i, args, buf, flags);
+		count = printf_args(format, &i, args, buf, flags, width, precision, size);
 		if (count == -1)
 			return (-1);
 		printed += count;

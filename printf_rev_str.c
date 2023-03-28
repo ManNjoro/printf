@@ -6,13 +6,17 @@
  * @flags: format flags.
  * Return: number of characters printed.
  */
-int printf_rev_str(va_list args, char *buffer, int flags)
+int printf_rev_str(va_list args, char *buffer, int flags,
+		int width, int precision, int size)
 {
 	char *str;
 	int i, len;
 
 	(void)buffer;
 	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
 
 	str = va_arg(args, char *);
 
