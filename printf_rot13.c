@@ -4,6 +4,9 @@
  * @args: type struct va_arg where is allocated printf arguments
  * @buffer: a char buffer.
  * @flags: format flags.
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: counter
  *
  */

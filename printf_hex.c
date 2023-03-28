@@ -5,6 +5,9 @@
  * @args: an argument of type va_list.
  * @buffer: a char buffer.
  * @flags: format flags.
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: number of digits in octal.
  */
 int printf_hex(va_list args, char *buffer, int flags,

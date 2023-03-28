@@ -71,7 +71,8 @@ int get_size(const char *format, int *index);
 typedef struct printf_f
 {
 	char specifier;
-	int (*f)(va_list args, char *buffer, int flags, int width, int precision, int size);
+	int (*f)(va_list args, char *buffer, int flags,
+			int width, int precision, int size);
 } printf_fmt;
 
 #endif

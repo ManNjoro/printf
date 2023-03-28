@@ -6,6 +6,9 @@
  * @args: a list of arguments to be printed.
  * @buf: a char array.
  * @flags: format flags
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: the number of characters printed.
  */
 int printf_args(const char *format, int *index, va_list args,

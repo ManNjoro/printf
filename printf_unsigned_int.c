@@ -4,6 +4,9 @@
  * @args: an argument of ytpe va_list.
  * @buffer: a char buffer.
  * @flags: format flags.
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: numbers of characters printed.
  */
 int printf_unsigned_int(va_list args, char *buffer, int flags,

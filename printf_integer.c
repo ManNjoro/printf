@@ -4,6 +4,9 @@
  * @args: argument to print
  * @buffer: a char buffer.
  * @flags: format flags.
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: number of characters printed
  */
 int printf_integer(va_list args, char *buffer, int flags,
@@ -18,10 +21,8 @@ int printf_integer(va_list args, char *buffer, int flags,
 	(void)width;
 	(void)precision;
 	(void)size;
-
 	n = n / 10;
 	num = n;
-
 	if (last < 0)
 	{
 		_putchar('-');
@@ -48,7 +49,6 @@ int printf_integer(va_list args, char *buffer, int flags,
 		}
 	}
 	_putchar(last + '0');
-
 	return (i);
 }
 
@@ -57,6 +57,9 @@ int printf_integer(va_list args, char *buffer, int flags,
  * @args: argument to print
  * @buffer: a char buffer.
  * @flags: format flags.
+ * @width: width of the argument to print.
+ * @precision: precision of the argument to print.
+ * @size: mod of the argument to print.
  * Return: number of characters printed
  */
 int printf_decimal(va_list args, char *buffer, int flags,
@@ -72,10 +75,8 @@ int printf_decimal(va_list args, char *buffer, int flags,
 	(void)width;
 	(void)precision;
 	(void)size;
-
 	n = n / 10;
 	num = n;
-
 	if (last < 0)
 	{
 		_putchar('-');
@@ -102,6 +103,5 @@ int printf_decimal(va_list args, char *buffer, int flags,
 		}
 	}
 	_putchar(last + '0');
-
 	return (i);
 }
