@@ -10,7 +10,7 @@
  * Return: the length of the string.
  */
 
-int printf_exclusive_string(va_list val, char *buffer, int flags,
+int printf_exclusive_string(va_list val, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	char *s;

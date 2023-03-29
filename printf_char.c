@@ -10,7 +10,7 @@
  * @size: mod of the argument to print.
  * Return: number of characters printed.
  */
-int printf_char(va_list args, char *buffer, int flags,
+int printf_char(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	int c = va_arg(args, int);

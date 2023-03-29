@@ -12,7 +12,7 @@
  * Return: the number of characters printed.
  */
 int printf_args(const char *format, int *index, va_list args,
-		char *buf, int flags, int width, int precision, int size)
+		char *buf, flg flags, int width, int precision, int size)
 {
 	int i, printed = -1;
 	printf_fmt fmts[] = {

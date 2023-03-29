@@ -10,7 +10,7 @@
  * @size: mod of the argument to print.
  * Return: Will return the amount of characters printed.
  */
-int printf_percent(va_list args, char *buffer, int flags,
+int printf_percent(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	(void)args;

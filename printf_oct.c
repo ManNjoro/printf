@@ -11,7 +11,7 @@
  * @size: mod of the argument to print.
  * Return: number of digits in octal.
  */
-int printf_oct(va_list args, char *buffer, int flags,
+int printf_oct(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	int i = 0, len = 0;

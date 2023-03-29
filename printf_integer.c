@@ -10,7 +10,7 @@ long int get_num(va_list args, int size);
  * @size: mod of the argument to print.
  * Return: number of characters printed
  */
-int printf_integer(va_list args, char *buffer, int flags,
+int printf_integer(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	long int n = get_num(args, size);
@@ -62,7 +62,7 @@ int printf_integer(va_list args, char *buffer, int flags,
  * @size: mod of the argument to print.
  * Return: number of characters printed
  */
-int printf_decimal(va_list args, char *buffer, int flags,
+int printf_decimal(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	long int n = get_num(args, size);

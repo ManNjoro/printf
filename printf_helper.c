@@ -8,7 +8,8 @@
 int printf_helper(const char *format, va_list args)
 {
 	int i, printed = 0, count, buf_size = 0;
-	int flags = 0, width = 0, precision = 0, size = 0;
+	int width = 0, precision = 0, size = 0;
+	flg flags;
 	char buf[SIZE];
 
 	for (i = 0; format[i]; i++)

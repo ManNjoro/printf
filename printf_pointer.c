@@ -50,7 +50,7 @@ int unsigned_long_int_to_hex(unsigned long int num)
  * @size: mod of the argument to print.
  * Return: number of characters printed.
  */
-int printf_pointer(va_list args, char *buffer, int flags,
+int printf_pointer(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	int len = 0;
