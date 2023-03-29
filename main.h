@@ -15,8 +15,9 @@
 #define F_HASH 8
 #define F_SPACE 16
 
-#define SIZE_LONG 2
-#define SIZE_SHORT 1
+#define SIZE_LONG 8
+#define SIZE_INT 4
+#define SIZE_SHORT 2
 
 int _putchar(char c);
 int _printf(const char *format, ...);
