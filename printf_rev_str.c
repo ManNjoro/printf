@@ -26,9 +26,9 @@ int printf_rev_str(va_list args, char *buffer, flg flags,
 	if (str == NULL)
 		str = "(nil)";
 
-	while (str[len] != '\0')
+	while (!str[len])
 		len++;
-
+	len--;
 	for (i = 0; i < len; i++)
 		_putchar(str[len - i - 1]);
 
