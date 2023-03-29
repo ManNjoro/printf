@@ -15,9 +15,8 @@ int printf_integer(va_list args, char *buffer, flg flags,
 {
 	long int n = get_num(args, size);
 	long int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+	int  i = 1, pos = 0;
 
-	(void)buffer;
 	(void)flags;
 	(void)width;
 	(void)precision;
@@ -25,7 +24,7 @@ int printf_integer(va_list args, char *buffer, flg flags,
 	num = n;
 	if (last < 0)
 	{
-		_putchar('-');
+		buffer[pos++] = '-';
 		num = -num;
 		n = -n;
 		last = -last;
@@ -42,14 +41,14 @@ int printf_integer(va_list args, char *buffer, flg flags,
 		while (exp > 0)
 		{
 			digit = num / exp;
-			_putchar(digit + '0');
+			buffer[pos++] = digit + '0';
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-	_putchar(last + '0');
-	return (i);
+	buffer[pos++] = last + '0';
+	return (write(1, buffer, pos));
 }
 
 /**
@@ -67,10 +66,8 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 {
 	long int n = get_num(args, size);
 	long int num, last = n % 10, digit;
-	int  i = 1;
-	int exp = 1;
+	int  i = 1, pos = 0, exp = 1;
 
-	(void)buffer;
 	(void)flags;
 	(void)width;
 	(void)precision;
@@ -78,7 +75,7 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 	num = n;
 	if (last < 0)
 	{
-		_putchar('-');
+		buffer[pos++] = '-';
 		num = -num;
 		n = -n;
 		last = -last;
@@ -95,14 +92,14 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 		while (exp > 0)
 		{
 			digit = num / exp;
-			_putchar(digit + '0');
+			buffer[pos++] = digit + '0';
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-	_putchar(last + '0');
-	return (i);
+	buffer[pos++] = last + '0';
+	return (write(1, buffer, pos));
 }
 
 /**
