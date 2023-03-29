@@ -16,16 +16,15 @@ int printf_oct(va_list args, char *buffer, int flags,
 {
 	int i = 0, len = 0;
 	int *ptr;
-	unsigned int dec, tmp;
+	unsigned long int _num, tmp;
 
-	dec = va_arg(args, unsigned int);
-	tmp = dec;
+	_num = get_unsigned_num(args, size);
+	tmp = _num;
 
 	(void)buffer;
 	(void)flags;
 	(void)width;
 	(void)precision;
-	(void)size;
 
 	while (tmp / 8 != 0)
 	{
@@ -38,8 +37,8 @@ int printf_oct(va_list args, char *buffer, int flags,
 
 	while (i < len)
 	{
-		ptr[i++] = dec % 8;
-		dec /= 8;
+		ptr[i++] = _num % 8;
+		_num /= 8;
 	}
 
 	for (i = len - 1; i >= 0; i--)

@@ -61,6 +61,7 @@ int get_all_flags(const char *format, int *index);
 int get_precision(const char *format, int *index, va_list args);
 int get_width(const char *format, int *index, va_list args);
 int get_size(const char *format, int *index);
+unsigned long int get_unsigned_num(va_list args, int size);
 
 /**
  * struct printf_f - a struct for the printf string specifiers ans

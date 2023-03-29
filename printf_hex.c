@@ -15,16 +15,15 @@ int printf_hex(va_list args, char *buffer, int flags,
 {
 	int i = 0, len = 0;
 	int *ptr;
-	unsigned int dec, tmp;
+	unsigned long int _num, tmp;
 
 	(void)buffer;
 	(void)flags;
 	(void)width;
 	(void)precision;
-	(void)size;
 
-	dec = va_arg(args, unsigned int);
-	tmp = dec;
+	_num = get_unsigned_num(args, size);
+	tmp = _num;
 
 	while (tmp / 16 != 0)
 	{
@@ -35,8 +34,8 @@ int printf_hex(va_list args, char *buffer, int flags,
 	ptr = malloc(len * sizeof(int));
 	while (i < len)
 	{
-		ptr[i++] = dec % 16;
-		dec /= 16;
+		ptr[i++] = _num % 16;
+		_num /= 16;
 	}
 	for (i = len - 1; i >= 0; i--)
 	{
