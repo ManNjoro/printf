@@ -13,7 +13,7 @@ int printf_rev_str(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	char *str;
-	int i, len;
+	int i, len = 0;
 
 	(void)buffer;
 	(void)flags;
@@ -23,14 +23,14 @@ int printf_rev_str(va_list args, char *buffer, flg flags,
 
 	str = va_arg(args, char *);
 
-	if (str == NULL)
+	if (str == NULL || !str[len])
 		str = "(nil)";
 
-	while (!str[len])
+	while (str[len])
 		len++;
-	len--;
-	for (i = 0; i < len; i++)
-		_putchar(str[len - i - 1]);
+
+	for (i = len - 1; i >= 0; i--)
+		_putchar(str[i]);
 
 	return (len);
 }
