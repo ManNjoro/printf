@@ -22,7 +22,7 @@ int printf_hex(va_list args, char *buffer, flg flags,
 	(void)precision;
 	_num = get_unsigned_num(args, size);
 	tmp = _num;
-	if (flags.hash)
+	if (flags.hash && _num > 0)
 	{
 		buffer[pos++] = '0';
 		buffer[pos++] = 'x';

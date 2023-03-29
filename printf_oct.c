@@ -22,7 +22,7 @@ int printf_oct(va_list args, char *buffer, flg flags,
 	tmp = _num;
 	(void)width;
 	(void)precision;
-	if (flags.hash)
+	if (flags.hash && _num > 0)
 		buffer[pos++] = '0';
 	while (tmp / 8 != 0)
 	{
