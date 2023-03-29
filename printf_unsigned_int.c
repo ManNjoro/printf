@@ -12,7 +12,7 @@
 int printf_unsigned_int(va_list args, char *buffer, int flags,
 		int width, int precision, int size)
 {
-	unsigned int _num;
+	unsigned long int _num;
 	int i, unit, num, digit, expo;
 
 	(void)buffer;
@@ -52,4 +52,18 @@ int printf_unsigned_int(va_list args, char *buffer, int flags,
 	}
 	_putchar(unit + '0');
 	return (i);
+}
+
+unsigned long int get_unsigned_number(va_list args, int size)
+{
+	unsigned long int val;
+
+	if (size == LONG_INT)
+		val = va_arg(args, unsigned long);
+	else if (size == SHORT_INT)
+		val = (unsigned int)va_arg(args, int);
+	else
+		val = va_arg(args, unsigned int);
+
+	return val;
 }

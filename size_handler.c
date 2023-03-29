@@ -8,32 +8,20 @@
  */
 int get_size(const char *format, int *index)
 {
-	int i, size;
+	int i, len_mod;
 
 	i = (*index) + 1;
-	size = 0;
+	len_mod = 0;
 
 	if (format[i] == 'l')
-	{
-		if (format[i + 1] == 'l')
-		{
-			size = SIZE_LONG;
-			i++;
-		}
-		else
-		{
-			size = SIZE_INT;
-		}
-	}
+		len_mod = LONG_INT;
 	else if (format[i] == 'h')
-	{
-		size = SIZE_SHORT;
-	}
+		len_mod = SHORT_INT;
 
-	if (size == 0)
+	if (len_mod == 0)
 		*index = i - 1;
 	else
 		*index = i;
 
-	return (size);
+	return (len_mod);
 }
