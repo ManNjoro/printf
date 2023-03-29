@@ -105,16 +105,21 @@ int printf_decimal(va_list args, char *buffer, int flags,
 	return (i);
 }
 
+/**
+ * get_num - determines the type of the argument and cast it.
+ * @args: a va_list type variable.
+ * @size: an int
+ * Return: the num with its appropriate type.
+ */
 long int get_num(va_list args, int size)
 {
 	long int val;
 
 	if (size == LONG_INT)
-		val = va_arg(args, long);
+		val = va_arg(args, long int);
 	else if (size == SHORT_INT)
-		val = (short)va_arg(args, int);
+		val = (short int)va_arg(args, int);
 	else
-		val = va_arg(args,int);
-
-	return val;
+		val = va_arg(args, int);
+	return (val);
 }

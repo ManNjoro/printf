@@ -52,17 +52,22 @@ int printf_unsigned_int(va_list args, char *buffer, int flags,
 	_putchar(unit + '0');
 	return (i);
 }
-
+/**
+ * get_unsigned_num - determines the type of the argument and cast it.
+ * @args: a va_list type variable.
+ * @size: an int
+ * Return: the num with its appropriate type.
+ */
 unsigned long int get_unsigned_num(va_list args, int size)
 {
 	unsigned long int val;
 
 	if (size == LONG_INT)
-		val = va_arg(args, unsigned long);
+		val = va_arg(args, unsigned long int);
 	else if (size == SHORT_INT)
-		val = (unsigned short)va_arg(args, int);
+		val = (unsigned short int)va_arg(args, int);
 	else
 		val = va_arg(args, unsigned int);
 
-	return val;
+	return (val);
 }
