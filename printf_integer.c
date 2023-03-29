@@ -1,4 +1,5 @@
 #include "main.h"
+long int get_num(va_list args, int size);
 /**
  * printf_integer - prints integer
  * @args: argument to print
@@ -12,7 +13,7 @@
 int printf_integer(va_list args, char *buffer, int flags,
 		int width, int precision, int size)
 {
-	int n = va_arg(args, int);
+	int n = get_num(args, size);
 	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
@@ -20,7 +21,6 @@ int printf_integer(va_list args, char *buffer, int flags,
 	(void)flags;
 	(void)width;
 	(void)precision;
-	(void)size;
 	n = n / 10;
 	num = n;
 	if (last < 0)
@@ -65,7 +65,7 @@ int printf_integer(va_list args, char *buffer, int flags,
 int printf_decimal(va_list args, char *buffer, int flags,
 		int width, int precision, int size)
 {
-	int n = va_arg(args, int);
+	int n = get_num(args, size);
 	int num, last = n % 10, digit;
 	int  i = 1;
 	int exp = 1;
@@ -74,7 +74,6 @@ int printf_decimal(va_list args, char *buffer, int flags,
 	(void)flags;
 	(void)width;
 	(void)precision;
-	(void)size;
 	n = n / 10;
 	num = n;
 	if (last < 0)
@@ -104,4 +103,18 @@ int printf_decimal(va_list args, char *buffer, int flags,
 	}
 	_putchar(last + '0');
 	return (i);
+}
+
+long int get_num(va_list args, int size)
+{
+	long int val;
+
+	if (size == LONG_INT)
+		val = va_arg(args, long);
+	else if (size == SHORT_INT)
+		val = (short)va_arg(args, int);
+	else
+		val = va_arg(args,int);
+
+	return val;
 }

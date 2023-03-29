@@ -60,7 +60,7 @@ unsigned long int get_unsigned_num(va_list args, int size)
 	if (size == LONG_INT)
 		val = va_arg(args, unsigned long);
 	else if (size == SHORT_INT)
-		val = (unsigned int)va_arg(args, int);
+		val = (unsigned short)va_arg(args, int);
 	else
 		val = va_arg(args, unsigned int);
 
