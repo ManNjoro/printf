@@ -22,7 +22,6 @@ int printf_rev_str(va_list args, char *buffer, flg flags,
 	(void)size;
 
 	str = va_arg(args, char *);
-`
 	if (str == NULL)
 		str = "(nil)";
 
