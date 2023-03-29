@@ -14,25 +14,26 @@
 int printf_HEX(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
-	int i = 0, len = 0;
+	int i = 0, len = 0, pos = 0;
 	int *ptr;
 	unsigned long int _num, tmp;
 
-	(void)buffer;
 	(void)flags;
 	(void)width;
 	(void)precision;
-
 	_num = get_unsigned_num(args, size);
 	tmp = _num;
-
+	if (flags.hash)
+	{
+		buffer[pos++] = '0';
+		buffer[pos++] = 'X';
+	}
 	while (tmp / 16 != 0)
 	{
 		tmp /= 16;
 		len++;
 	}
 	len++;
-
 	ptr = malloc(len * sizeof(unsigned int));
 
 	while (i < len)
@@ -45,10 +46,10 @@ int printf_HEX(va_list args, char *buffer, flg flags,
 	{
 		if (ptr[i] > 9)
 			ptr[i] += 7;
-		_putchar(ptr[i] + '0');
+		buffer[pos++] = ptr[i] + '0';
 	}
 
 	free(ptr);
 
-	return (len);
+	return (write(1, buffer, pos));
 }

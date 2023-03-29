@@ -13,25 +13,27 @@
 int printf_hex(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
-	int i = 0, len = 0;
-	int *ptr;
+	int i = 0, pos = 0, len = 0;
 	unsigned long int _num, tmp;
+	int *ptr;
 
 	(void)buffer;
-	(void)flags;
 	(void)width;
 	(void)precision;
-
 	_num = get_unsigned_num(args, size);
 	tmp = _num;
-
+	if (flags.hash)
+	{
+		buffer[pos++] = '0';
+		buffer[pos++] = 'x';
+	}
 	while (tmp / 16 != 0)
 	{
 		tmp /= 16;
 		len++;
 	}
 	len++;
-	ptr = malloc(len * sizeof(int));
+	ptr = malloc(len * (sizeof(unsigned int)));
 	while (i < len)
 	{
 		ptr[i++] = _num % 16;
@@ -41,8 +43,8 @@ int printf_hex(va_list args, char *buffer, flg flags,
 	{
 		if (ptr[i] > 9)
 			ptr[i] += 39;
-		_putchar(ptr[i] + '0');
+		buffer[pos++] = ptr[i] + '0';
 	}
 	free(ptr);
-	return (len);
+	return (write(1, buffer, pos));
 }

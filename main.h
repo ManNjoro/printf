@@ -12,6 +12,14 @@
 #define LONG_INT 4
 #define SHORT_INT 2
 
+/**
+ * struct flag - represents the format flags.
+ * @pos: '+'
+ * @space: ' '
+ * @hash: '#'
+ * @zero: '0'
+ * @neg: '-'
+ */
 typedef struct flag
 {
 	int pos;
