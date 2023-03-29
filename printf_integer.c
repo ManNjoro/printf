@@ -13,8 +13,8 @@ long int get_num(va_list args, int size);
 int printf_integer(va_list args, char *buffer, int flags,
 		int width, int precision, int size)
 {
-	int n = get_num(args, size);
-	int num, last = n % 10, digit, exp = 1;
+	long int n = get_num(args, size);
+	long int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
 	(void)buffer;
@@ -65,8 +65,8 @@ int printf_integer(va_list args, char *buffer, int flags,
 int printf_decimal(va_list args, char *buffer, int flags,
 		int width, int precision, int size)
 {
-	int n = get_num(args, size);
-	int num, last = n % 10, digit;
+	long int n = get_num(args, size);
+	long int num, last = n % 10, digit;
 	int  i = 1;
 	int exp = 1;
 
