@@ -38,8 +38,9 @@ int printf_args(const char *format, int *index, va_list args,
 
 	if (format[*index])
 	{
-		printed += _putchar('%');
-		printed += _putchar(format[*index]);
+		_putchar('%');
+		_putchar(format[*index]);
+		return (2);
 	}
 
 	return (printed);
