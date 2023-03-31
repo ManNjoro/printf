@@ -20,6 +20,5 @@ int printf_percent(va_list args, char *buffer, flg flags,
 	(void)precision;
 	(void)size;
 
-	_putchar('%');
-	return (1);
+	return (_putchar('%'));
 }

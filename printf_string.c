@@ -26,10 +26,7 @@ int printf_string(va_list args, char *buffer, flg flags,
 	while (str[len] != '\0')
 		len++;
 
-	while (pos < len)
-	{
+	for (; pos < len; pos++)
 		buffer[pos] = str[pos];
-		pos++;
-	}
 	return (print_buffer(buffer, pos, width));
 }
