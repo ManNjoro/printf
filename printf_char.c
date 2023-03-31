@@ -19,7 +19,10 @@ int printf_char(va_list args, char *buffer, flg flags,
 	(void)(flags);
 	(void)(precision);
 	(void)(size);
-
-	buffer[pos++] = c;
-	return (print_buffer(buffer, pos, width));
+	if (c != '\0')
+	{
+		buffer[pos++] = c;
+		return (print_buffer(buffer, pos, width));
+	} else
+		return (pos);
 }
