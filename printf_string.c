@@ -20,14 +20,12 @@ int printf_string(va_list args, char *buffer, flg flags,
 	(void)precision;
 	(void)size;
 
-	if (str == NULL || str[pos] == '\0')
+	if (str == NULL)
 		str = "(null)";
 
 	while (*str)
 	{
 		buffer[pos++] = *str;
-		if (pos == SIZE - 24)
-			pos = write_buffer(buffer, pos);
 		str++;
 	}
 	return (print_buffer(buffer, pos, width));
