@@ -13,8 +13,7 @@ long int get_num(va_list args, int size);
 int printf_integer(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
-	long int n = get_num(args, size);
-	long int num, last = n % 10, digit, exp = 1;
+	long int n = get_num(args, size), num, last = n % 10, digit, exp = 1;
 	int pos = 0, i = 0;
 
 	(void)precision;
@@ -31,9 +30,7 @@ int printf_integer(va_list args, char *buffer, flg flags,
 	else
 	{
 		if (flags.pos)
-		{
 			buffer[pos++] = '+';
-		}
 		else if (flags.space)
 			buffer[pos++] = ' ';
 	}
