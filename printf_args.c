@@ -36,5 +36,8 @@ int printf_args(const char *format, int *index, va_list args,
 		if (fmts[i].specifier == format[*index])
 			return (fmts[i].f(args, buf, flags, width, precision, size));
 
+	if (format[*index])
+		printed = _putchar(format[*index]);
+
 	return (printed);
 }
