@@ -14,22 +14,16 @@ int printf_string(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	char *str = va_arg(args, char *);
-	int len = 0, i;
+	int pos = 0, i = 0;
 
-	(void)buffer;
 	(void)flags;
-	(void)width;
 	(void)precision;
 	(void)size;
 
 	if (str == NULL)
 		str = "(nil)";
 
-	while (str[len])
-		len++;
-
-	for (i = 0; i < len; i++)
-		_putchar(str[i]);
-
-	return (len);
+	while (str[pos])
+		buffer[pos++] = str[i++];
+	return (print_buffer(buffer, pos, width));
 }
