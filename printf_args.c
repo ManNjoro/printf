@@ -14,7 +14,7 @@
 int printf_args(const char *format, int *index, va_list args,
 		char *buf, flg flags, int width, int precision, int size)
 {
-	int i, printed = -1;
+	int i, printed = 0;
 	printf_fmt fmts[] = {
 		{'c', printf_char},
 		{'s', printf_string},
@@ -37,7 +37,10 @@ int printf_args(const char *format, int *index, va_list args,
 			return (fmts[i].f(args, buf, flags, width, precision, size));
 
 	if (format[*index])
-		printed = _putchar(format[*index]);
+	{
+		printed += _putchar('%');
+		printed += _putchar(format[*index]);
+	}
 
 	return (printed);
 }
