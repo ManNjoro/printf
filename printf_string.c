@@ -21,10 +21,7 @@ int printf_string(va_list args, char *buffer, flg flags,
 	(void)size;
 
 	if (str == NULL)
-	{
 		str = "(null)";
-		return (write(1, str, 6));
-	}
 
 	while (str[len] != '\0')
 		len++;
