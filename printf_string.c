@@ -20,7 +20,7 @@ int printf_string(va_list args, char *buffer, flg flags,
 	(void)precision;
 	(void)size;
 
-	if (str == NULL)
+	if (str == NULL || str[pos] == '\0')
 		str = "(null)";
 
 	while (*str)
