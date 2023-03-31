@@ -14,7 +14,7 @@ int printf_string(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	char *str = va_arg(args, char *);
-	int pos = 0, i = 0;
+	int pos = 0, len = 0;
 
 	(void)flags;
 	(void)precision;
@@ -23,7 +23,13 @@ int printf_string(va_list args, char *buffer, flg flags,
 	if (str == NULL)
 		str = "(nil)";
 
-	while (str[pos])
-		buffer[pos++] = str[i++];
+	while (str[len] != '\0')
+		len++;
+
+	while (pos < len)
+	{
+		buffer[pos] = str[pos];
+		pos++;
+	}
 	return (print_buffer(buffer, pos, width));
 }
