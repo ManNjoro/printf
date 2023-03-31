@@ -14,13 +14,13 @@ int printf_char(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	int c = va_arg(args, int);
+	int pos = 0;
 
-	(void)(buffer);
 	(void)(flags);
-	(void)(width);
 	(void)(precision);
 	(void)(size);
 
-	_putchar(c);
-	return (1);
+	if (c)
+		buffer[pos++] = c;
+	return (print_buffer(buffer, pos, width));
 }
