@@ -17,8 +17,6 @@ int printf_hex(va_list args, char *buffer, flg flags,
 	unsigned long int _num, tmp;
 	int *ptr;
 
-	(void)buffer;
-	(void)width;
 	(void)precision;
 	_num = get_unsigned_num(args, size);
 	tmp = _num;
@@ -46,5 +44,5 @@ int printf_hex(va_list args, char *buffer, flg flags,
 		buffer[pos++] = ptr[i] + '0';
 	}
 	free(ptr);
-	return (write(1, buffer, pos));
+	return (print_buffer(buffer, pos, width));
 }

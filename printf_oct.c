@@ -20,7 +20,6 @@ int printf_oct(va_list args, char *buffer, flg flags,
 
 	_num = get_unsigned_num(args, size);
 	tmp = _num;
-	(void)width;
 	(void)precision;
 	if (flags.hash && _num > 0)
 		buffer[pos++] = '0';
@@ -42,5 +41,5 @@ int printf_oct(va_list args, char *buffer, flg flags,
 
 	free(ptr);
 
-	return (write(1, buffer, pos));
+	return (print_buffer(buffer, pos, width));
 }
