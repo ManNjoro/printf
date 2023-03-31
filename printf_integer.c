@@ -15,9 +15,8 @@ int printf_integer(va_list args, char *buffer, flg flags,
 {
 	long int n = get_num(args, size);
 	long int num, last = n % 10, digit, exp = 1;
-	int  i = 1, pos = 0;
+	int pos = 0, i = 0;
 
-	(void)flags;
 	(void)width;
 	(void)precision;
 	n = n / 10;
@@ -25,10 +24,17 @@ int printf_integer(va_list args, char *buffer, flg flags,
 	if (last < 0)
 	{
 		buffer[pos++] = '-';
-		num = -num;
-		n = -n;
-		last = -last;
+		num *= -1;
+		n *= -1;
+		last *= -1;
 		i++;
+	}
+	else
+	{
+		if (flags.pos)
+			buffer[pos++] = '+';
+		else if (flags.pos)
+			buffer[pos++] = ' ';
 	}
 	if (num > 0)
 	{
@@ -66,9 +72,8 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 {
 	long int n = get_num(args, size);
 	long int num, last = n % 10, digit;
-	int  i = 1, pos = 0, exp = 1;
+	int pos = 0, exp = 1, i = 0;
 
-	(void)flags;
 	(void)width;
 	(void)precision;
 	n = n / 10;
@@ -80,6 +85,15 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 		n = -n;
 		last = -last;
 		i++;
+	}
+	else
+	{
+		if (flags.pos)
+		{
+			buffer[pos++] = '+';
+		}
+		else if (flags.space)
+			buffer[pos++] = ' ';
 	}
 	if (num > 0)
 	{
