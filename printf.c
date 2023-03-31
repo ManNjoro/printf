@@ -7,12 +7,14 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed;
+	int printed = -1;
 	va_list args;
 
-	va_start(args, format);
 	if (format != NULL && format[0] != '\0')
-			printed = printf_helper(format, args);
-	va_end(args);
+	{
+		va_start(args, format);
+		printed = printf_helper(format, args);
+		va_end(args);
+	}
 	return (printed);
 }
