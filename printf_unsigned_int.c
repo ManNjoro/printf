@@ -13,11 +13,9 @@ int printf_unsigned_int(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	unsigned long int _num;
-	int i, unit, num, digit, expo;
+	int i, unit, num, digit, expo, pos = 0;
 
-	(void)buffer;
 	(void)flags;
-	(void)width;
 	(void)precision;
 	_num = get_unsigned_num(args, size);
 	i = 1;
@@ -26,7 +24,7 @@ int printf_unsigned_int(va_list args, char *buffer, flg flags,
 	expo = 1;
 	if (unit < 0)
 	{
-		_putchar('-');
+		buffer[pos++] = '-';
 		_num *= -1;
 		unit *= -1;
 		i++;
@@ -43,14 +41,14 @@ int printf_unsigned_int(va_list args, char *buffer, flg flags,
 		while (expo > 0)
 		{
 			digit = num / expo;
-			_putchar(digit + '0');
+			buffer[pos++] = digit + '0';
 			num -= (digit * expo);
 			expo /= 10;
 			i++;
 		}
 	}
-	_putchar(unit + '0');
-	return (i);
+	buffer[pos++] = unit + '0';
+	return (print_buffer(buffer, pos, width));
 }
 /**
  * get_unsigned_num - determines the type of the argument and cast it.
