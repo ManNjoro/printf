@@ -54,7 +54,7 @@ int printf_integer(va_list args, char *buffer, flg flags,
 		}
 	}
 	buffer[pos++] = last + '0';
-	return (write(1, buffer, pos));
+	return (print_buffer(buffer, pos, width));
 }
 
 /**
@@ -112,8 +112,9 @@ int printf_decimal(va_list args, char *buffer, flg flags,
 			i++;
 		}
 	}
+
 	buffer[pos++] = last + '0';
-	return (write(1, buffer, pos));
+	return (print_buffer(buffer, pos, width));
 }
 
 /**
@@ -133,4 +134,26 @@ long int get_num(va_list args, int size)
 	else
 		val = va_arg(args, int);
 	return (val);
+}
+/**
+ * print_buffer - prints all the characters in the buffer.
+ * @buffer: a char array
+ * @pos: number of characters in the char array to print.
+ * @width: Minumum number of characters to be printed.
+ * Return: number of characters printed.
+ */
+int print_buffer(char *buffer, int pos, int width)
+{
+	char buf[1024];
+	int i = 0, j = 0;
+
+	if (width > pos)
+	{
+		while (i < width - pos)
+			buf[i++] = ' ';
+		while (i < width)
+			buf[i++] = buffer[j++];
+		return (write(1, buf, i));
+	}
+	return (write(1, buffer, pos));
 }
