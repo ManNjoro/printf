@@ -31,7 +31,7 @@ int printf_helper(const char *format, va_list args)
 		size = get_size(format, &i);
 		i++;
 		count = printf_args(format, &i, args, buf, flags, width, precision, size);
-		if (count == -1)
+		if (count < 0)
 			return (-1);
 		printed += count;
 	}
