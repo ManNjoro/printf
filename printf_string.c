@@ -14,7 +14,7 @@ int printf_string(va_list args, char *buffer, flg flags,
 		int width, int precision, int size)
 {
 	char *str = va_arg(args, char *);
-	int pos = 0, len = 0;
+	long int pos = 0, len = 0;
 
 	(void)flags;
 	(void)precision;
@@ -27,6 +27,11 @@ int printf_string(va_list args, char *buffer, flg flags,
 		len++;
 
 	for (; pos < len; pos++)
+	{
 		buffer[pos] = str[pos];
+
+		if (pos == SIZE - 24)
+			pos = write_buffer(buffer, pos);
+	}
 	return (print_buffer(buffer, pos, width));
 }
