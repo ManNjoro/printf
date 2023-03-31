@@ -22,6 +22,12 @@ int unsigned_long_int_to_hex(unsigned long int num)
 
 	res = malloc(len * sizeof(long int));
 
+	if (!res)
+	{
+		free(res);
+		return (0);
+	}
+
 	while (i < len)
 	{
 		res[i++] = num % 16;
