@@ -30,5 +30,6 @@ int printf_string(va_list args, char *buffer, flg flags,
 			pos = write_buffer(buffer, pos);
 		str++;
 	}
+	free(str);
 	return (print_buffer(buffer, pos, width));
 }
